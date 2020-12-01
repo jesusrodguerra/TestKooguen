@@ -1,5 +1,5 @@
-import { ITipo } from '../models/tipo.model';
-import {IPost} from '../models/post.model';
+import { ITipo } from "../models/tipo.model";
+import {IPost} from "../models/post.model";
 
 export default class Post implements IPost {
 
@@ -8,8 +8,8 @@ export default class Post implements IPost {
     author: string;
 
     constructor( id: string | number,
-        title: string,
-        author: string) {
+                 title: string,
+                 author: string) {
         this.id = id;
         this.title = title;
         this.author = author;

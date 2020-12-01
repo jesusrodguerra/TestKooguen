@@ -27,4 +27,43 @@ export class ContentPostComponent implements OnInit {
       });
   }
 
+  createPost() {
+    const randomId = Math.random();
+    const newPost = {
+      id: randomId,
+      title: `Post with id: ${randomId}`,
+      author: "Jesus",
+    };
+    this.userService.postPostList(newPost)
+    .subscribe((post: Post) => {
+      // this.post = post;
+      const newPosts = [...this.post];
+      newPosts.push(post);
+      this.post = newPosts;
+      console.log(post);
+    });
+  }
+
+  deletePost(id, index) {
+    this.userService.deletePostList(id)
+    .subscribe( () => {
+      const newPosts = [...this.post];
+      newPosts.splice(index, 1);
+      this.post = newPosts
+    });
+  }
+
+  updatePost(post: Post, index) {
+    const updatedPost = {...post};
+    updatedPost.author = "My updated author";
+    this.userService.putPostList(updatedPost)
+    .subscribe((newPostUpdated: Post) => {
+      // this.post = post;
+      const newPosts = [...this.post];
+      newPosts[index] = newPostUpdated;
+      this.post = newPosts;
+      console.log(newPostUpdated);
+    });
+  }
+
 }

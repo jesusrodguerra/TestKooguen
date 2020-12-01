@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import Post from '../classes/post.class';
-import Profile from '../classes/profile.class';
-import Comentario from '../classes/comentarios.class';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import Post from "../classes/post.class";
+import Profile from "../classes/profile.class";
+import Comentario from "../classes/comentarios.class";
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UserService {
 
-   URL_API = 'http://localhost:3000'
+   URL_API = "http://localhost:3000";
 
   constructor(
     private http: HttpClient
@@ -29,11 +29,11 @@ export class UserService {
   }
 
   putPostList(payload: Post) {
-    return this.http.put(`${this.URL_API}/posts`, payload);
+    return this.http.put(`${this.URL_API}/posts/${payload.id}`, payload);
   }
 
   deletePostList(id: string | number) {
-    return this.http.delete(`${this.URL_API}/post/${id}`);
+    return this.http.delete(`${this.URL_API}/posts/${id}`);
   }
 
   getComentList() {

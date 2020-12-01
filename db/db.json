@@ -1,12 +1,34 @@
 {
-
   "posts": [
-    { "id": 1, "title": "Este", "author": "es un ejemplo" },
-    { "id": 1, "title": "Este", "author": "es un ejemplo" }
-    ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "title": "Este",
+      "author": "es un ejemplo"
+    },
+    {
+      "id": 0.8453685524371093,
+      "title": "New Post",
+      "author": "Jesus"
+    },
+    {
+      "id": 0.06083455530144377,
+      "title": "Post with id: 0.06083455530144377",
+      "author": "My updated author"
+    },
+    {
+      "id": 0.8575132872833942,
+      "title": "Post with id: 0.8575132872833942",
+      "author": "Jesus"
+    }
   ],
-  "profile": { "name": "typicode" }
-
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

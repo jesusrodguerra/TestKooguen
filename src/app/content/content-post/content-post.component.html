@@ -1,7 +1,12 @@
 
- <ul *ngFor="let postItem of post">
+ <ul *ngFor="let postItem of post;let i = index">
      <li>
         <h2>Title: <strong> {{postItem.title}} </strong></h2>
+        <p> {{ postItem.author }} </p>
+        <button (click)="deletePost(postItem.id, i)">Delete</button>
+        <button (click)="updatePost(postItem, i)" >Update</button>
      </li>
  </ul>
+
+ <button (click)="createPost()">Create Post</button>
 
